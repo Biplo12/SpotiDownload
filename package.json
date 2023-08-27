@@ -18,12 +18,17 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.33.0",
+    "@types/qs": "^6.9.7",
+    "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.260.0",
     "next": "^13.4.10",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "spotify-web-api-node": "^5.0.2",
     "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {
@@ -34,6 +39,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.2.15",
+    "@types/spotify-web-api-node": "^5.0.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.14",
