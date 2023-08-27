@@ -21,29 +21,11 @@ const useIsLoggedInToSpotifyQuery = (
   return { isLoggedInToSpotify };
 };
 
-const useIsLoggedToGoogleQuery = (
-  access_token: string | string[] | undefined
-) => {
-  const { data, isError } = useQuery({
-    queryKey: ['isLoggedInToGoogle'],
-    queryFn: async () =>
-      await axios.get('https://www.googleapis.com/oauth2/v1/userinfo', {
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      }),
-  });
-
-  const isLoggedInToGoogle = data && !isError;
-  return { isLoggedInToGoogle };
-};
-
 const useIsLoggedIn = () => {
   const { access_token } = useUserTokens();
   const { isLoggedInToSpotify } = useIsLoggedInToSpotifyQuery(access_token);
-  const { isLoggedInToGoogle } = useIsLoggedToGoogleQuery(access_token);
 
-  return { isLoggedInToSpotify, isLoggedInToGoogle };
+  return { isLoggedInToSpotify };
 };
 
 export default useIsLoggedIn;

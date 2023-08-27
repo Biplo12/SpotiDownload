@@ -6,7 +6,7 @@ import useUserTokens from '@/hooks/useUserTokens';
 const useFetchPlaylist = (playlistId: string) => {
   const { access_token } = useUserTokens();
 
-  const { data, refetch } = useQuery({
+  const { refetch } = useQuery({
     queryKey: ['fetchPlaylist'],
     queryFn: async () =>
       await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}`, {
@@ -17,8 +17,7 @@ const useFetchPlaylist = (playlistId: string) => {
     enabled: false,
   });
 
-  const playlist = data?.data;
-  return { refetch, playlist };
+  return { fetchPlaylist: refetch };
 };
 
 export default useFetchPlaylist;
