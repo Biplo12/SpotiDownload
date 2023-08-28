@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const YOUTUBE_BASE_URL = 'https://www.youtube.com/results';
 
-const useSearchForSong = () => {
-  const searchForSong = async (songName: string, artist: string) => {
+const useSongSearch = () => {
+  const searchSong = async (songName: string, artist: string) => {
     const url = `https://corsproxy.io/?${encodeURIComponent(
       `${YOUTUBE_BASE_URL}?search_query=${songName + ' ' + artist}`
     )}`;
@@ -15,7 +15,7 @@ const useSearchForSong = () => {
       .contents[0].videoRenderer;
   };
 
-  return { searchForSong };
+  return { searchSong };
 };
 
-export default useSearchForSong;
+export default useSongSearch;

@@ -1,5 +1,5 @@
-import useFetchPlaylist from '@/hooks/useFetchPlaylist';
-import useSearchForSong from '@/hooks/useSearchForSong';
+import usePlaylistFetcher from '@/hooks/usePlaylistFetcher';
+import useSongSearch from '@/hooks/useSongSearch';
 
 import { useAppDispatch } from '@/store/store-hooks';
 
@@ -7,10 +7,10 @@ import { IPlaylist } from '@/interfaces/IPlaylist';
 import { ISong } from '@/interfaces/ISong';
 import { setSong, setSongsLoadingState } from '@/state/globalSlice';
 
-const useFetchSongs = (playlistId: string) => {
-  const { searchForSong } = useSearchForSong();
+const useSongFetcher = (playlistId: string) => {
+  const { searchSong } = useSongSearch();
   const dispatch = useAppDispatch();
-  const { fetchPlaylist } = useFetchPlaylist(playlistId);
+  const { fetchPlaylist } = usePlaylistFetcher(playlistId);
   const fetchPlaylistHandler = async () => {
     dispatch(setSongsLoadingState({ isLoading: true, progress: 0 }));
     const response = await fetchPlaylist();
@@ -19,7 +19,7 @@ const useFetchSongs = (playlistId: string) => {
     for (let i = 0; i < 5; i++) {
       const songName = songNames[i];
       const songArtist = data?.tracks?.items?.[i]?.track?.artists?.[0]?.name;
-      const song = (await searchForSong(
+      const song = (await searchSong(
         songName as string,
         songArtist as string
       )) as ISong;
@@ -46,4 +46,4 @@ const useFetchSongs = (playlistId: string) => {
   return { fetchPlaylistHandler };
 };
 
-export default useFetchSongs;
+export default useSongFetcher;

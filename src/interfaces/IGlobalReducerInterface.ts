@@ -5,7 +5,7 @@ interface ISongObject {
 }
 
 export default interface IGlobalReducerInterface {
-  isLoggedInToSpotify: boolean;
+  spotifyAuthStatus: boolean;
   songs: ISongObject[];
   songsLoadingState: {
     isLoading: boolean;

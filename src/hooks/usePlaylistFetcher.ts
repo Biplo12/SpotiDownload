@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-import useUserTokens from '@/hooks/useUserTokens';
+import useUserTokens from '@/hooks/useSpotifyUserTokens';
 
-const useFetchPlaylist = (playlistId: string) => {
+const usePlaylistFetcher = (playlistId: string) => {
   const { access_token } = useUserTokens();
 
   const { refetch } = useQuery({
@@ -20,4 +20,4 @@ const useFetchPlaylist = (playlistId: string) => {
   return { fetchPlaylist: refetch };
 };
 
-export default useFetchPlaylist;
+export default usePlaylistFetcher;

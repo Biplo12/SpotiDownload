@@ -1,6 +1,6 @@
 import React from 'react';
 const SPOTIFY_LOGIN_URL = '/api/authorize/spotifyAuth';
-const LoginToSpotifyButton: React.FC = (): JSX.Element => {
+const SpotifyAuthButton: React.FC = (): JSX.Element => {
   const handleSpotifyLoginRedirect = () => {
     window.location.href = SPOTIFY_LOGIN_URL;
   };
@@ -14,4 +14,4 @@ const LoginToSpotifyButton: React.FC = (): JSX.Element => {
     </button>
   );
 };
-export default LoginToSpotifyButton;
+export default SpotifyAuthButton;

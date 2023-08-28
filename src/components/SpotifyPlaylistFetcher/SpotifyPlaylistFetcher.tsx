@@ -1,15 +1,15 @@
 import React from 'react';
 
-import useFetchSongs from '@/hooks/useFetchSongs';
+import useSongFetcher from '@/hooks/useSongFetcher';
 
-interface IFetchPlaylistButtonProps {
+interface ISpotifyPlaylistFetcherProps {
   playlistId: string;
 }
 
-const FetchPlaylistButton: React.FC<IFetchPlaylistButtonProps> = ({
+const SpotifyPlaylistFetcher: React.FC<ISpotifyPlaylistFetcherProps> = ({
   playlistId,
 }): JSX.Element => {
-  const { fetchPlaylistHandler } = useFetchSongs(playlistId);
+  const { fetchPlaylistHandler } = useSongFetcher(playlistId);
 
   return (
     <div className='flex flex-col gap-4'>
@@ -23,4 +23,4 @@ const FetchPlaylistButton: React.FC<IFetchPlaylistButtonProps> = ({
     </div>
   );
 };
-export default FetchPlaylistButton;
+export default SpotifyPlaylistFetcher;

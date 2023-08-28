@@ -1,18 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-import useUserTokens from '@/hooks/useUserTokens';
+import useSpotifyUserTokens from '@/hooks/useSpotifyUserTokens';
 
 import { useAppDispatch } from '@/store/store-hooks';
 
-import { setIsLoggedInToSpotify } from '@/state/globalSlice';
+import { setSpotifyAuthStatus } from '@/state/globalSlice';
 
-const useIsLoggedInToSpotifyQuery = (
+const useSpotifyAuthStatusQuery = (
   access_token: string | string[] | undefined
 ) => {
   const dispatch = useAppDispatch();
   const { data, isError } = useQuery({
-    queryKey: ['isLoggedInToSpotify'],
+    queryKey: ['spotifyAuthStatus'],
     queryFn: async () =>
       await axios.get('https://api.spotify.com/v1/me', {
         headers: {
@@ -22,16 +22,16 @@ const useIsLoggedInToSpotifyQuery = (
     enabled: !!access_token,
   });
 
-  const isLoggedInToSpotify = data && !isError;
-  dispatch(setIsLoggedInToSpotify(isLoggedInToSpotify));
-  return { isLoggedInToSpotify };
+  const spotifyAuthStatus = data && !isError;
+  dispatch(setSpotifyAuthStatus(spotifyAuthStatus));
+  return { spotifyAuthStatus };
 };
 
 const useIsLoggedIn = () => {
-  const { access_token } = useUserTokens();
-  const { isLoggedInToSpotify } = useIsLoggedInToSpotifyQuery(access_token);
+  const { access_token } = useSpotifyUserTokens();
+  const { spotifyAuthStatus } = useSpotifyAuthStatusQuery(access_token);
 
-  return { isLoggedInToSpotify };
+  return { spotifyAuthStatus };
 };
 
 export default useIsLoggedIn;

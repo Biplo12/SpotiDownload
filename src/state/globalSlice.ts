@@ -5,7 +5,7 @@ import { RootState } from '@/store/store';
 import { IGlobalReducerInterface } from '@/interfaces';
 
 const initialState: IGlobalReducerInterface = {
-  isLoggedInToSpotify: false,
+  spotifyAuthStatus: false,
   songs: [],
   songsLoadingState: {
     isLoading: false,
@@ -20,8 +20,8 @@ const globalSlice = createSlice({
     setSong: (state, action) => {
       state.songs.push(action.payload);
     },
-    setIsLoggedInToSpotify: (state, action) => {
-      state.isLoggedInToSpotify = action.payload;
+    setSpotifyAuthStatus: (state, action) => {
+      state.spotifyAuthStatus = action.payload;
     },
     setSongsLoadingState: (state, action) => {
       state.songsLoadingState = action.payload;
@@ -30,7 +30,6 @@ const globalSlice = createSlice({
 });
 
 const { actions, reducer } = globalSlice;
-export const { setSong, setIsLoggedInToSpotify, setSongsLoadingState } =
-  actions;
+export const { setSong, setSpotifyAuthStatus, setSongsLoadingState } = actions;
 export const selectGlobal = (state: RootState) => state.global;
 export default reducer;

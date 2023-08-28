@@ -1,14 +1,14 @@
 import * as React from 'react';
 
+import HomePage from '@/components/HomePage';
 import Layout from '@/components/layout/Layout';
-import Main from '@/components/Main';
 import Seo from '@/components/Seo';
 
-export default function HomePage() {
+export default function MainPage() {
   return (
     <Layout>
       <Seo />
-      <Main />
+      <HomePage />
     </Layout>
   );
 }
