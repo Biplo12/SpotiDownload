@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(https://db.onlinewebfonts.com/c/816f4c10fc448021980ec83bd50d9825?family=Tw+Cen+MT+Std+Semi+Medium);
+
+@font-face {
+  font-family: 'Tw Cen MT Std Semi';
+  src: url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.eot');
+  src: url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.woff')
+      format('woff'),
+    url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.ttf')
+      format('truetype'),
+    url('https://db.onlinewebfonts.com/t/816f4c10fc448021980ec83bd50d9825.svg#Tw Cen MT Std Semi Medium')
+      format('svg');
+}
+
+body {
+  font-family: 'Tw Cen MT Std Semi';
+}
+
+.bar {
+  width: 2px;
+  height: 0;
+  background-color: #fff;
+  margin: 0 1px;
+  animation: grow var(--animation-duration) infinite alternate;
+  animation-delay: calc(var(--delay) * 0.1s);
+  max-height: calc(var(--max-height) * 100%);
+  transform: scaleY(var(--scale-y));
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
