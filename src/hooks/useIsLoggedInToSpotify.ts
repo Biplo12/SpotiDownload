@@ -3,9 +3,14 @@ import axios from 'axios';
 
 import useUserTokens from '@/hooks/useUserTokens';
 
+import { useAppDispatch } from '@/store/store-hooks';
+
+import { setIsLoggedInToSpotify } from '@/state/globalSlice';
+
 const useIsLoggedInToSpotifyQuery = (
   access_token: string | string[] | undefined
 ) => {
+  const dispatch = useAppDispatch();
   const { data, isError } = useQuery({
     queryKey: ['isLoggedInToSpotify'],
     queryFn: async () =>
@@ -18,6 +23,7 @@ const useIsLoggedInToSpotifyQuery = (
   });
 
   const isLoggedInToSpotify = data && !isError;
+  dispatch(setIsLoggedInToSpotify(isLoggedInToSpotify));
   return { isLoggedInToSpotify };
 };
 

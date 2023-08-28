@@ -1,21 +1,18 @@
 import axios from 'axios';
 
-const useSearchForSong = () => {
-  const NEXT_PUBLIC_GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+const YOUTUBE_BASE_URL = 'https://www.youtube.com/results';
 
-  const searchForSong = async (songName: string) => {
-    const response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search`,
-      {
-        params: {
-          part: 'snippet',
-          maxResults: 1,
-          q: songName,
-          key: NEXT_PUBLIC_GOOGLE_API_KEY,
-        },
-      }
-    );
-    return response.data;
+const useSearchForSong = () => {
+  const searchForSong = async (songName: string, artist: string) => {
+    const url = `https://corsproxy.io/?${encodeURIComponent(
+      `${YOUTUBE_BASE_URL}?search_query=${songName + ' ' + artist}`
+    )}`;
+    const { data } = await axios.get(url);
+    const parsedData = data.split('ytInitialData = ')[1].split(';</script>')[0];
+    const parsedDataJson = JSON.parse(parsedData);
+    return parsedDataJson.contents.twoColumnSearchResultsRenderer
+      .primaryContents.sectionListRenderer.contents[0].itemSectionRenderer
+      .contents[0].videoRenderer;
   };
 
   return { searchForSong };
