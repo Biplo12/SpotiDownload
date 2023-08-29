@@ -39,7 +39,7 @@ const HowToUse: React.FC = (): JSX.Element => {
                 <span className='text-9xl font-bold'>{index + 1}.</span>
                 <div className='flex flex-col items-start justify-start gap-4'>
                   <h2 className='text-4xl font-bold'>{step.title}</h2>
-                  <p className='max-w-[350px] text-lg'>{step.description}</p>
+                  <p className='max-w-[375px] text-lg'>{step.description}</p>
                 </div>
               </div>
             );
