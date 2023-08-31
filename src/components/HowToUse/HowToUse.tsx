@@ -26,7 +26,7 @@ const HowToUse: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <div className='flex h-auto min-h-[65vh] w-full flex-col items-center justify-center gap-12 bg-[#191414] text-white'>
+    <div className='bg-spotify-black flex h-auto min-h-[65vh] w-full flex-col items-center justify-center gap-12 text-white'>
       <div className='flex flex-wrap items-center justify-center gap-12'>
         {steps.map((step, index) => {
           return (
@@ -34,7 +34,7 @@ const HowToUse: React.FC = (): JSX.Element => {
               key={index}
               className='flex flex-col items-start justify-start gap-6'
             >
-              <span className='text-9xl font-bold text-[#1DB954]'>
+              <span className='text-spotify-green text-9xl font-bold'>
                 {index + 1}.
               </span>
               <div className='flex flex-col items-start justify-start gap-4'>

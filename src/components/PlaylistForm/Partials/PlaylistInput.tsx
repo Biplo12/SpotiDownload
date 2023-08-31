@@ -9,7 +9,7 @@ const PlaylistInput: React.FC<IPlaylistInputProps> = ({
 }): JSX.Element => {
   return (
     <input
-      className='text-md rounded-md border border-gray-100 bg-gray-100 bg-transparent px-4 py-2 font-light text-gray-100 focus:border-transparent focus:outline-none focus:ring-[1px] focus:ring-[#1ED760]'
+      className='border-spotify-green text-spotify-black flex w-[275px] items-center justify-center gap-3 rounded-full border-2 bg-transparent px-12 py-2 text-xl font-bold shadow-lg disabled:cursor-not-allowed disabled:opacity-50'
       type='text'
       placeholder='Enter Spotify Playlist ID'
       onChange={(e) => setPlaylistId(e.target.value)}

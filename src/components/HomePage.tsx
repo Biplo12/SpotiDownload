@@ -1,33 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import LandingHeader from '@/components/LandingPage/Partials/LandingHeader';
-import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
-import PlaylistInput from '@/components/PlaylistInput/PlaylistInput';
-import SpotifyPlaylistFetcher from '@/components/SpotifyPlaylistFetcher/SpotifyPlaylistFetcher';
-import YoutubeSongs from '@/components/YoutubeSongs/YoutubeSongs';
+import useSpotifyAuthStatus from '@/hooks/useSpotifyAuthStatus';
+
+import AboutTheProcess from '@/components/AboutTheProcess/AboutTheProcess';
+import HowToUse from '@/components/HowToUse/HowToUse';
+import LoginPage from '@/components/LoginPage/LoginPage';
+import MainPage from '@/components/MainPage/MainPage';
 
 import { useAppSelector } from '@/store/store-hooks';
 
 const HomePage: React.FC = (): JSX.Element => {
-  const [playlistId, setPlaylistId] = useState<string>('');
-
-  const { isLoading } = useAppSelector(
-    (state) => state.global.songsLoadingState
+  useSpotifyAuthStatus();
+  const spotifyAuthStatus = useAppSelector(
+    (state) => state.global.spotifyAuthStatus
   );
+
   return (
-    <div className='flex h-auto min-h-[100vh] w-full flex-col items-center justify-center bg-[#3144A3]'>
-      <div className='flex flex-col items-center justify-center gap-4'>
-        <LandingHeader />
-        {!isLoading ? (
-          <div className='flex flex-col items-center justify-center gap-4'>
-            <PlaylistInput setPlaylistId={setPlaylistId} />
-            <SpotifyPlaylistFetcher playlistId={playlistId} />
-            <YoutubeSongs />
-          </div>
-        ) : (
-          <LoadingScreen />
-        )}
-      </div>
+    <div className='flex w-full flex-col items-center justify-center bg-[#3144A3]'>
+      {spotifyAuthStatus ? <MainPage /> : <LoginPage />}
+      <HowToUse />
+      <AboutTheProcess />
     </div>
   );
 };

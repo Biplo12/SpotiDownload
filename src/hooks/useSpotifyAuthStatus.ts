@@ -7,10 +7,9 @@ import { useAppDispatch } from '@/store/store-hooks';
 
 import { setSpotifyAuthStatus } from '@/state/globalSlice';
 
-const useSpotifyAuthStatusQuery = (
-  access_token: string | string[] | undefined
-) => {
+const useIsLoggedIn = () => {
   const dispatch = useAppDispatch();
+  const { access_token } = useSpotifyUserTokens();
   const { data, isError } = useQuery({
     queryKey: ['spotifyAuthStatus'],
     queryFn: async () =>
@@ -24,14 +23,6 @@ const useSpotifyAuthStatusQuery = (
 
   const spotifyAuthStatus = data && !isError;
   dispatch(setSpotifyAuthStatus(spotifyAuthStatus));
-  return { spotifyAuthStatus };
-};
-
-const useIsLoggedIn = () => {
-  const { access_token } = useSpotifyUserTokens();
-  const { spotifyAuthStatus } = useSpotifyAuthStatusQuery(access_token);
-
-  return { spotifyAuthStatus };
 };
 
 export default useIsLoggedIn;

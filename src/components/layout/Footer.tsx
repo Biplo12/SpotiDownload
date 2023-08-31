@@ -1,34 +1,30 @@
 import React from 'react';
 const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className='flex min-h-[6.5vh] w-full items-center justify-center gap-3 bg-[#191414] text-white'>
-      <p className='flex gap-2 text-xl'>
-        <span>
-          Created by{' '}
-          <a
-            href='https://github.com/Biplo12'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-[#1DB954] hover:underline'
-          >
-            Robert Sinski{' '}
-          </a>
-        </span>
+    <footer className='bg-spotify-black flex min-h-[6.5vh] w-full items-center justify-center gap-3 text-white'>
+      <p className='flex gap-1 text-xl'>
+        <span>Created by </span>
+        <a
+          href='https://github.com/Biplo12'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-spotify-green hover:underline'
+        >
+          Robert Sinski{' '}
+        </a>
       </p>
-      <p className='flex gap-2 text-xl'>|</p>
-      <span>
-        <p className='flex gap-2 text-xl'>
-          Powered by{' '}
-          <a
-            href='https://developer.spotify.com/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-[#1DB954] hover:underline'
-          >
-            Spotify API
-          </a>
-        </p>
-      </span>
+      <p className='flex text-xl'>|</p>
+      <p className='flex gap-1 text-xl'>
+        <span>Powered by </span>
+        <a
+          href='https://developer.spotify.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-spotify-green hover:underline'
+        >
+          Spotify API
+        </a>
+      </p>
     </footer>
   );
 };
