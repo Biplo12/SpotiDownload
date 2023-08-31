@@ -26,30 +26,24 @@ const HowToUse: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <div className='flex h-auto min-h-[90vh] w-full flex-col gap-12 bg-[#3144A3] p-12 text-white'>
-      <h1 className='text-center text-[4rem] font-bold'>How to use?</h1>
+    <div className='flex h-auto min-h-[65vh] w-full flex-col items-center justify-center gap-12 bg-[#191414] text-white'>
       <div className='flex flex-wrap items-center justify-center gap-12'>
-        <div className='grid grid-cols-2 gap-12'>
-          {steps.map((step, index) => {
-            return (
-              <div
-                key={index}
-                className='flex flex-col items-start justify-start gap-6'
-              >
-                <span className='text-9xl font-bold'>{index + 1}.</span>
-                <div className='flex flex-col items-start justify-start gap-4'>
-                  <h2 className='text-4xl font-bold'>{step.title}</h2>
-                  <p className='max-w-[375px] text-lg'>{step.description}</p>
-                </div>
+        {steps.map((step, index) => {
+          return (
+            <div
+              key={index}
+              className='flex flex-col items-start justify-start gap-6'
+            >
+              <span className='text-9xl font-bold text-[#1DB954]'>
+                {index + 1}.
+              </span>
+              <div className='flex flex-col items-start justify-start gap-4'>
+                <h2 className='text-4xl font-bold'>{step.title}</h2>
+                <p className='max-w-[400px] text-xl'>{step.description}</p>
               </div>
-            );
-          })}
-        </div>
-        <img
-          className='h-auto w-[400px] rounded object-cover object-bottom'
-          src='/images/spotify-bg.png'
-          alt='spotify'
-        />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -6,10 +6,10 @@ import LandingPage from '@/components/LandingPage/LandingPage';
 
 const StartPage: React.FC = (): JSX.Element => {
   return (
-    <div className='flex h-auto min-h-[100vh] w-full flex-col'>
+    <div className='flex h-auto min-h-[100vh] w-full flex-col bg-[#3144A3]'>
       <LandingPage />
-      <AboutTheProcess />
       <HowToUse />
+      <AboutTheProcess />
     </div>
   );
 };

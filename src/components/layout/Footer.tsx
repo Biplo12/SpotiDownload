@@ -1,7 +1,7 @@
 import React from 'react';
 const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className='flex min-h-[10vh] w-full items-center justify-center bg-[#191414] text-white'>
+    <footer className='flex min-h-[6.5vh] w-full items-center justify-center gap-3 bg-[#191414] text-white'>
       <p className='flex gap-2 text-xl'>
         <span>
           Created by{' '}
@@ -14,21 +14,21 @@ const Footer: React.FC = (): JSX.Element => {
             Robert Sinski{' '}
           </a>
         </span>
-        <p>|</p>
-        <span>
-          <p>
-            Powered by{' '}
-            <a
-              href='https://developer.spotify.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-[#1DB954] hover:underline'
-            >
-              Spotify API
-            </a>
-          </p>
-        </span>
       </p>
+      <p className='flex gap-2 text-xl'>|</p>
+      <span>
+        <p className='flex gap-2 text-xl'>
+          Powered by{' '}
+          <a
+            href='https://developer.spotify.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-[#1DB954] hover:underline'
+          >
+            Spotify API
+          </a>
+        </p>
+      </span>
     </footer>
   );
 };

@@ -8,7 +8,7 @@ const SpotifyAuthButton: React.FC = (): JSX.Element => {
 
   return (
     <button
-      className='flex items-center justify-center gap-4 rounded-lg border border-gray-300 px-7 py-4 font-bold text-white shadow-2xl transition-all duration-150 ease-linear hover:border-[#1ED760] hover:text-[#1ED760]'
+      className='flex items-center justify-center gap-4 rounded-lg border border-gray-300 px-6 py-3 font-bold text-white shadow-2xl transition-all duration-150 ease-linear hover:border-[#1ED760] hover:text-[#1ED760]'
       onClick={handleSpotifyLoginRedirect}
     >
       <SpotifyIcon className='h-8 w-8' />
