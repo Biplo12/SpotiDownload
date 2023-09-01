@@ -26,7 +26,7 @@ const HowToUse: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <div className='bg-spotify-black flex h-auto min-h-[65vh] w-full flex-col items-center justify-center gap-12 text-white'>
+    <div className='bg-spotify-black flex h-auto min-h-[65vh] w-full flex-col items-center justify-center gap-12 p-8 text-white'>
       <div className='flex flex-wrap items-center justify-center gap-12'>
         {steps.map((step, index) => {
           return (

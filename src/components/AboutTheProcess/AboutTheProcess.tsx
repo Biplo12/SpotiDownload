@@ -6,7 +6,9 @@ const AboutTheProcess: React.FC = (): JSX.Element => {
     <div className='flex min-h-[65vh] w-full items-center justify-center gap-5 bg-[#3144A3] text-white'>
       <SpotifyDoogyIcon className='h-[300px] w-[300px]' />
       <div className='flex flex-col items-start justify-center'>
-        <h1 className='text-[4rem] font-bold'>About the process</h1>
+        <h1 className='text-spotify-green text-[4rem] font-bold '>
+          About the process
+        </h1>
         <p className='max-w-[900px] text-2xl'>
           When you login with your Spotify account, we will get your playlists
           and search for the songs in the playlist on YouTube. Then we will

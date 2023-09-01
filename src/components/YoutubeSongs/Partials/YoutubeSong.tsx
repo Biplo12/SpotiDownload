@@ -13,7 +13,7 @@ const FetchedYTSong: React.FC<IFetchedYTSongProps> = ({
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
       <iframe
-        className='h-96 w-96'
+        className='h-24 w-24'
         src={`https://www.youtube.com/embed/${song?.id}`}
         title='YouTube video player'
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'

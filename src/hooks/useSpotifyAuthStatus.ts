@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 import useSpotifyUserTokens from '@/hooks/useSpotifyUserTokens';
 
@@ -22,7 +23,12 @@ const useIsLoggedIn = () => {
   });
 
   const spotifyAuthStatus = data && !isError;
-  dispatch(setSpotifyAuthStatus(spotifyAuthStatus));
+
+  useEffect(() => {
+    dispatch(setSpotifyAuthStatus(spotifyAuthStatus));
+  }, [dispatch, spotifyAuthStatus]);
+
+  return spotifyAuthStatus;
 };
 
 export default useIsLoggedIn;

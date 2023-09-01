@@ -1,4 +1,4 @@
-interface ISongObject {
+export interface ISongObject {
   id: string;
   title: string;
   artist: string;
@@ -7,8 +7,18 @@ interface ISongObject {
 export default interface IGlobalReducerInterface {
   spotifyAuthStatus: boolean;
   songs: ISongObject[];
+  playlistName: string;
   songsLoadingState: {
     isLoading: boolean;
-    progress: number;
+    songsInPlaylist: number;
+  };
+  isPlaylistDownloaded: boolean;
+  dialog: {
+    isOpen: boolean;
+    title: string;
+    actions: {
+      text: string;
+      onClick: () => void;
+    }[];
   };
 }
