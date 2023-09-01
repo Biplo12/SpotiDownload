@@ -8,8 +8,7 @@ The Spotify to YouTube Playlist Converter App is a web application built using N
 
 - Spotify Login: Users can log in to the app using their Spotify accounts.
 - YouTube Search: The app searches for songs from the entered Spotify playlist on YouTube.
-- Format Selection: Users can choose to download songs as videos or audio files.
-- ZIP Package Generation: The app generates a downloadable ZIP package containing the selected songs in the chosen format.
+- ZIP Package Generation: The app generates a downloadable ZIP package containing the songs from selected playlist.
 
 ## 3. Installation
 
