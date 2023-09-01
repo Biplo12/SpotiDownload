@@ -11,7 +11,7 @@ const HowToUse: React.FC = (): JSX.Element => {
     {
       title: 'Select the playlists',
       description:
-        'Select the playlists you want to download or type the playlist URL in the search bar.',
+        'Type the playlist ID and click on the "Find playlist" button.',
     },
     {
       title: 'Wait for the songs to load',

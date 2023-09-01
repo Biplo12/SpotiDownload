@@ -10,10 +10,10 @@ const AboutTheProcess: React.FC = (): JSX.Element => {
           About the process
         </h1>
         <p className='max-w-[900px] text-2xl'>
-          When you login with your Spotify account, we will get your playlists
-          and search for the songs in the playlist on YouTube. Then we will
-          download the songs from YouTube and convert them to MP3 files. After
-          that you can download the MP3 files.{' '}
+          When you login with your Spotify account, and paste the playlist ID,
+          the website will fetch the playlist from Spotify. Then it will
+          download the MP3 files from YouTube. Finally, it will zip the MP3
+          files and send it to you.{' '}
           <span className='text-spotify-green font-bold'>
             It is that simple!
           </span>

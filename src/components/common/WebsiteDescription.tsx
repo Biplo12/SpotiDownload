@@ -9,8 +9,7 @@ const WebsiteDescription: React.FC = (): JSX.Element => {
         This website allows you to download your{' '}
         <span className='text-spotify-green font-bold'>Spotify</span> playlists
         as MP3 files for free. Just login with your Spotify account and paste
-        the playlist link or choose one of your playlists. Then you can download
-        the songs as MP3 files.
+        the playlist ID. Then you can download the playlist as a ZIP file
       </p>
     </div>
   );

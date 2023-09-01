@@ -2,13 +2,12 @@
 
 ## 1. Introduction
 
-The Spotify to YouTube Playlist Converter App is a web application built using Next.js, TypeScript, and Tailwind CSS. This app allows users to log in with their Spotify accounts, select playlists either from their Spotify library or by providing a playlist ID, search for the corresponding songs on YouTube, and finally generate a downloadable ZIP package containing the selected songs in either video or audio format.
+The Spotify to YouTube Playlist Converter App is a web application built using Next.js, TypeScript, and Tailwind CSS. This app allows users to log in with their Spotify accounts, input a playlist ID, search for the corresponding songs on YouTube, and finally generate a downloadable ZIP package containing the selected songs in either video or audio format.
 
 ## 2. Features
 
 - Spotify Login: Users can log in to the app using their Spotify accounts.
-- Playlist Selection: Users can choose playlists from their Spotify library or manually input a playlist ID.
-- YouTube Search: The app searches for songs from the selected playlist on YouTube.
+- YouTube Search: The app searches for songs from the entered Spotify playlist on YouTube.
 - Format Selection: Users can choose to download songs as videos or audio files.
 - ZIP Package Generation: The app generates a downloadable ZIP package containing the selected songs in the chosen format.
 
@@ -42,7 +41,7 @@ To run the project locally, follow these steps:
 
 3. After logging in, you'll be redirected to the main page.
 
-4. Choose a playlist by either selecting one from your Spotify library or entering a playlist ID.
+4. Enter a Spotify playlist ID in the provided field.
 
 5. Click on the "Search on YouTube" button to search for the playlist's songs on YouTube.
 
@@ -57,3 +56,4 @@ To run the project locally, follow these steps:
 - **Batch Processing**: Enhance the app to support batch processing for multiple playlists.
 - **Playlist Customization**: Allow users to customize the order of songs before generating the ZIP package.
 - **Error Handling**: Implement better error handling for cases like unavailable songs on YouTube.
+- **Choose from Trending Playlists**: Add a feature that allows users to choose from a list of trending Spotify playlists as a source for song conversion.
