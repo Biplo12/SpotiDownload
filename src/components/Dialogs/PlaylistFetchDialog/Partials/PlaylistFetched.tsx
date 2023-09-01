@@ -1,9 +1,9 @@
 import React from 'react';
 
-import DownloadSong from '@/components/Dialogs/PlaylistFetchDialog/Partials/DownloadSong';
+import DownloadPlaylist from '@/components/Dialogs/PlaylistFetchDialog/Partials/DownloadPlaylist';
 
 import { useAppSelector } from '@/store/store-hooks';
-const SongsFetched: React.FC = (): JSX.Element => {
+const PlaylistFetched: React.FC = (): JSX.Element => {
   const songs = useAppSelector((state) => state.global.songs);
   const playlistName = useAppSelector((state) => state.global.playlistName);
   return (
@@ -17,8 +17,8 @@ const SongsFetched: React.FC = (): JSX.Element => {
           <span className='text-spotify-green'>{playlistName}</span>
         </h2>
       </div>
-      <DownloadSong />
+      <DownloadPlaylist />
     </div>
   );
 };
-export default SongsFetched;
+export default PlaylistFetched;

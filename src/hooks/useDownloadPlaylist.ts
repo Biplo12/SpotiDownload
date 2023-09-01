@@ -1,6 +1,6 @@
 import axios from 'axios';
 import JSZip from 'jszip';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import logger from '@/lib/logger';
 
@@ -11,14 +11,14 @@ import { setIsPlaylistDownloaded } from '@/state/globalSlice';
 
 const BASE_YOUTUBE_URL = 'https://www.youtube.com/watch?v=';
 
-const DownloadSong: React.FC = (): JSX.Element => {
-  const dispatch = useAppDispatch();
-  const [isDownloading, setIsDownloading] = useState(false);
+const useDownloadPlaylist = () => {
   const [progress, setProgress] = useState(0);
-  const songs = useAppSelector((state) => state.global.songs);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const dispatch = useAppDispatch();
   const playlistName = useAppSelector((state) => state.global.playlistName);
-  const songsLength = songs?.length;
-  const downloadSongs = async (songs: ISongObject[]) => {
+
+  const downloadPlaylist = async (songs: ISongObject[]) => {
+    setIsDownloading(true);
     const zip = new JSZip();
 
     try {
@@ -40,26 +40,14 @@ const DownloadSong: React.FC = (): JSX.Element => {
 
       downloadLink.click();
       dispatch(setIsPlaylistDownloaded(true));
+      setIsDownloading(false);
     } catch (error) {
       logger('Error downloading songs:', error?.toString());
+      setIsDownloading(false);
     }
   };
 
-  const handleDownloadSongs = async () => {
-    setIsDownloading(true);
-    await downloadSongs(songs as ISongObject[]);
-    setIsDownloading(false);
-  };
-
-  return (
-    <button
-      className='bg-spotify-green text-spotify-black flex min-w-[325px] items-center justify-center gap-3 rounded-full px-12 py-3 text-xl font-bold shadow-lg transition-all duration-200 ease-linear hover:bg-opacity-80 disabled:cursor-not-allowed disabled:opacity-50'
-      onClick={handleDownloadSongs}
-      disabled={isDownloading}
-    >
-      {isDownloading ? `${progress}/${songsLength} Downloading...` : `Download`}
-    </button>
-  );
+  return { downloadPlaylist, progress, isDownloading };
 };
 
-export default DownloadSong;
+export default useDownloadPlaylist;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Spinner from '@/components/Dialogs/common/Spinner';
+import Spinner from '@/components/common/Spinner';
 
 import { useAppSelector } from '@/store/store-hooks';
 const FetchingPlaylist: React.FC = (): JSX.Element => {

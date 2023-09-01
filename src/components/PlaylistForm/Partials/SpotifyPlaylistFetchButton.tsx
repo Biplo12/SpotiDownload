@@ -35,7 +35,7 @@ const SpotifyPlaylistFetchButton: React.FC<
       onClick={handleOpenDialog}
       disabled={!playlistId}
     >
-      Fetch Playlist
+      Find playlist
     </button>
   );
 };

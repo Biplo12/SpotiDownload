@@ -3,7 +3,7 @@ import React from 'react';
 import WebsiteDescription from '@/components/common/WebsiteDescription';
 import MusicBars from '@/components/LoginPage/Partials/MusicBars';
 import PlaylistForm from '@/components/PlaylistForm/PlaylistForm';
-const Controller: React.FC = (): JSX.Element => {
+const Main: React.FC = (): JSX.Element => {
   return (
     <div className='relative flex h-[80vh] w-full flex-col items-center justify-center gap-12'>
       <WebsiteDescription />
@@ -14,4 +14,4 @@ const Controller: React.FC = (): JSX.Element => {
     </div>
   );
 };
-export default Controller;
+export default Main;

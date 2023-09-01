@@ -3,7 +3,7 @@ import React from 'react';
 import DialogHeader from '@/components/Dialogs/common/DialogHeader';
 import FetchingPlaylist from '@/components/Dialogs/PlaylistFetchDialog/Partials/FetchingPlaylist';
 import PlaylistDownloaded from '@/components/Dialogs/PlaylistFetchDialog/Partials/PlaylistDownloaded';
-import SongsFetched from '@/components/Dialogs/PlaylistFetchDialog/Partials/SongsFetched';
+import PlaylistFetched from '@/components/Dialogs/PlaylistFetchDialog/Partials/PlaylistFetched';
 
 import { useAppSelector } from '@/store/store-hooks';
 const PlaylistFetchDialog: React.FC = (): JSX.Element => {
@@ -20,7 +20,7 @@ const PlaylistFetchDialog: React.FC = (): JSX.Element => {
         {isLoading ? (
           <FetchingPlaylist />
         ) : !isPlaylistDownloaded ? (
-          <SongsFetched />
+          <PlaylistFetched />
         ) : (
           <PlaylistDownloaded />
         )}
