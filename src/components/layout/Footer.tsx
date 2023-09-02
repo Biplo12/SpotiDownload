@@ -1,8 +1,8 @@
 import React from 'react';
 const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className='bg-spotify-black flex min-h-[6.5vh] w-full items-center justify-center gap-3 text-white'>
-      <p className='flex gap-1 text-xl'>
+    <footer className='bg-spotify-black flex min-h-[6.5vh] w-full flex-wrap items-center justify-center gap-3 p-8 text-center text-white'>
+      <p className='exsm:flex-col flex gap-1 text-xl'>
         <span>Created by </span>
         <a
           href='https://github.com/Biplo12'
@@ -13,8 +13,8 @@ const Footer: React.FC = (): JSX.Element => {
           Robert Sinski{' '}
         </a>
       </p>
-      <p className='flex text-xl'>|</p>
-      <p className='flex gap-1 text-xl'>
+      <p className='exsm:hidden flex text-xl'>|</p>
+      <p className='exsm:flex-col flex gap-1 text-xl'>
         <span>Powered by </span>
         <a
           href='https://developer.spotify.com/'

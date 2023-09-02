@@ -13,17 +13,16 @@ const PlaylistFetchDialog: React.FC = (): JSX.Element => {
   const { isLoading } = useAppSelector(
     (state) => state.global.songsLoadingState
   );
+  const songs = useAppSelector((state) => state.global.songs);
   return (
     <div className='bg-spotify-black fixed left-1/2 top-1/2 z-50 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 transform rounded-md text-white'>
       <DialogHeader />
       <div className='flex h-[320px] w-full flex-col items-center justify-center'>
-        {isLoading ? (
-          <FetchingPlaylist />
-        ) : !isPlaylistDownloaded ? (
+        {isLoading && <FetchingPlaylist />}
+        {!isLoading && !isPlaylistDownloaded && songs.length > 0 && (
           <PlaylistFetched />
-        ) : (
-          <PlaylistDownloaded />
         )}
+        {isPlaylistDownloaded && <PlaylistDownloaded />}
       </div>
     </div>
   );

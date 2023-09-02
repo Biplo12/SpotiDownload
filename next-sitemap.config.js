@@ -3,8 +3,7 @@
  * @see https://github.com/iamvishnusankar/next-sitemap#readme
  */
 module.exports = {
-  // !STARTERCONF Change the siteUrl
-  siteUrl: 'https://spotify-playlist-scrapper.vercel.app/',
+  siteUrl: 'https://spotidownload.vercel.app/',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],

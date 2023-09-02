@@ -2,11 +2,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Spotify Playlist Scrapper',
-  siteName: 'Spotify Playlist Scrapper',
+  title: 'SpotiDownload',
+  siteName: 'SpotiDownload',
   description:
     'Scrap Spotify playlist and get the list of songs in the playlist',
-  url: 'https://spotify-playlist-scrapper.vercel.app/',
+  url: 'https://spotidownload.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   image: 'https://tsnext-tw.thcl.dev/images/large-og.png',

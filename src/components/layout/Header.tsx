@@ -9,7 +9,7 @@ const Header: React.FC = (): JSX.Element => {
     (state) => state.global.spotifyAuthStatus
   );
   return (
-    <header className='absolute left-0 top-0 z-20 flex w-full items-center justify-between bg-transparent p-4'>
+    <header className='exsm:justify-center absolute left-0 top-0 z-20 flex w-full flex-wrap items-center justify-between gap-2 bg-transparent p-4'>
       <Logo />
       {spotifyAuthStatus && <LogoutButton />}
     </header>

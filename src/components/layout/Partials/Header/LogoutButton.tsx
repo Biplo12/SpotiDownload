@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useAppDispatch } from '@/store/store-hooks';
 
@@ -7,7 +7,6 @@ import { setSpotifyAuthStatus } from '@/state/globalSlice';
 
 import LogoutIcon from '~/svg/logout-icon.svg';
 const LogoutButton: React.FC = (): JSX.Element => {
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const handleLogout = () => {
@@ -16,22 +15,11 @@ const LogoutButton: React.FC = (): JSX.Element => {
   };
   return (
     <button
-      className='flex items-center justify-center gap-2 text-white'
+      className='bg-spotify-green text-spotify-black exsm:px-0 flex min-w-[50px] items-center justify-center gap-3 rounded-full px-4 py-1.5 text-xl font-bold shadow-lg transition-all duration-200 ease-linear hover:bg-opacity-80 disabled:cursor-not-allowed disabled:opacity-50'
       onClick={handleLogout}
-      onMouseEnter={() => setIsButtonHovered(true)}
-      onMouseLeave={() => setIsButtonHovered(false)}
     >
-      <h1
-        className={`text-2xl ${
-          isButtonHovered ? 'text-spotify-green' : 'text-white'
-        }`}
-      >
-        Logout
-      </h1>
-      <LogoutIcon
-        className='h-6 w-6'
-        fill={isButtonHovered ? '#1DB954' : 'white'}
-      />
+      <h1 className='exsm:hidden text-xl'>Logout</h1>
+      <LogoutIcon className='h-6 w-6' />
     </button>
   );
 };
