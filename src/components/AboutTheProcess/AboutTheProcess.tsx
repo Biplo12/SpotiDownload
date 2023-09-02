@@ -3,8 +3,8 @@ import React from 'react';
 import SpotifyDoogyIcon from '~/svg/spotify.svg';
 const AboutTheProcess: React.FC = (): JSX.Element => {
   return (
-    <div className='mxsm:flex-col mxsm:pt-0 flex min-h-[65vh] w-full items-center justify-center gap-3 bg-[#3144A3] p-8 text-white'>
-      <SpotifyDoogyIcon className='h-[300px] w-[300px]' />
+    <div className='mxsm:flex-col flex min-h-[65vh] w-full items-center justify-center gap-12 bg-[#3144A3] p-8 text-white'>
+      <SpotifyDoogyIcon className='h-[175px] w-[175px]' />
       <div className='flex flex-col items-start justify-center gap-3'>
         <h1 className='text-spotify-green mxsm:text-4xl text-6xl font-bold'>
           About the process
