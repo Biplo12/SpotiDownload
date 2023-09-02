@@ -15,7 +15,7 @@ const PlaylistFetchDialog: React.FC = (): JSX.Element => {
   );
   const songs = useAppSelector((state) => state.global.songs);
   return (
-    <div className='bg-spotify-black fixed left-1/2 top-1/2 z-50 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 transform rounded-md text-white'>
+    <div className='bg-spotify-black mxsm:w-auto fixed left-1/2 top-1/2 z-50 h-[400px] w-[600px] min-w-[275px] -translate-x-1/2 -translate-y-1/2 transform rounded-md text-white'>
       <DialogHeader />
       <div className='flex h-[320px] w-full flex-col items-center justify-center'>
         {isLoading && <FetchingPlaylist />}

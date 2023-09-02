@@ -17,7 +17,7 @@ const DownloadPlaylist: React.FC = (): JSX.Element => {
 
   return (
     <button
-      className='bg-spotify-green text-spotify-black flex min-w-[325px] items-center justify-center gap-3 rounded-full px-12 py-3 text-xl font-bold shadow-lg transition-all duration-200 ease-linear hover:bg-opacity-80 disabled:cursor-not-allowed disabled:opacity-50'
+      className='bg-spotify-green text-spotify-black mxsm:w-auto flex w-[325px] items-center justify-center gap-3 rounded-full px-12 py-3 text-xl font-bold shadow-lg transition-all duration-200 ease-linear hover:bg-opacity-80 disabled:cursor-not-allowed disabled:opacity-50'
       onClick={handleDownloadSongs}
       disabled={isDownloading}
     >
